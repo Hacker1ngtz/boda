@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boda Estela y Eduardo</title>
+    <title>Boda Jeshua & Angelli</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -268,7 +268,7 @@
             <div class="seal">J&A</div>
             <div class="letter text-center p-4">
                 <span class="block text-2xl mb-2">Jeshua&Angelli</span>
-                <span class="block text-sm font-sans text-sage-600 tracking-widest uppercase">25 · 07 · 2026</span>
+                <span class="block text-sm font-sans text-sage-600 tracking-widest uppercase">30 · 05 · 2026</span>
             </div>
         </div>
         <p class="mt-12 text-sage-600 font-sans text-sm tracking-[0.2em] uppercase animate-pulse">Pulsa el sobre para abrir</p>
@@ -328,6 +328,186 @@
                 </div>
             </div>
         </section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nuestra Boda</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #f4f1ea;
+    font-family: 'Playfair Display', serif;
+}
+
+.container {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 60px 40px;
+    background: #fff;
+    border: 6px solid #d4af37;
+    outline: 1px solid #e7d3a3;
+    outline-offset: -15px;
+    text-align: center;
+    position: relative;
+}
+
+/* DECORACIONES (más sutiles y elegantes) */
+.corner {
+    position: absolute;
+    width: 140px;
+    opacity: 0.85;
+}
+
+.tl { top: -30px; left: -30px; }
+.tr { top: -30px; right: -30px; transform: scaleX(-1); }
+.bl { bottom: -30px; left: -30px; transform: scaleY(-1); }
+.br { bottom: -30px; right: -30px; transform: scale(-1); }
+
+/* TEXTO */
+.quote {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 78px;
+    margin: 0;
+}
+
+.and {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    margin: 5px 0;
+}
+
+.message {
+    font-size: 20px;
+    margin: 35px 0;
+}
+
+/* FECHA */
+.date-block {
+    margin: 30px 0;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.line {
+    height: 1px;
+    width: 90px;
+    background: #d4af37;
+}
+
+.day, .time {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.number {
+    font-size: 75px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.month {
+    font-size: 15px;
+    letter-spacing: 4px;
+}
+
+/* UBICACIÓN */
+.location {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.location em {
+    font-style: italic;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 45px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+}
+
+/* DETALLE EXTRA: efecto papel */
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(212,175,55,0.4);
+    pointer-events: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- FLORES (puedes cambiar por PNGs exactos si quieres) -->
+    <img src="https://i.imgur.com/9yG3YzR.png" class="corner tl">
+    <img src="https://i.imgur.com/9yG3YzR.png" class="corner tr">
+    <img src="https://i.imgur.com/9yG3YzR.png" class="corner bl">
+    <img src="https://i.imgur.com/9yG3YzR.png" class="corner br">
+
+    <div class="quote">
+        “El que halla esposa halla el bien, y alcanza la benevolencia de Jehová.”<br>
+        — Proverbios 18:22
+    </div>
+
+    <h1 class="names">Jeshua</h1>
+    <div class="and">&</div>
+    <h1 class="names">Angelli</h1>
+
+    <div class="message">
+        Queremos que seas parte de uno de los días más importantes de nuestras vidas.
+    </div>
+
+    <div class="date-block">
+
+        <div class="row">
+            <div class="line"></div>
+            <div class="day">SÁBADO</div>
+            <div class="line"></div>
+        </div>
+
+        <div class="number">30</div>
+        <div class="month">MAYO</div>
+
+        <div class="row">
+            <div class="line"></div>
+            <div class="time">A LA 1:00 PM</div>
+            <div class="line"></div>
+        </div>
+
+    </div>
+
+    <div class="location">
+        San Pedro Tapanatepec, Oaxaca<br>
+        <em>Salón NaturaFrut</em>
+    </div>
+
+    <div class="footer">
+        Nuestra Boda
+    </div>
+
+</div>
+
+</body>
+</html>
 
         <!-- NUESTRA HISTORIA -->
         <section class="py-24 px-6 relative">
@@ -544,7 +724,7 @@
 
         // --- LÓGICA DE LA CUENTA ATRÁS ---
         // Fecha de la boda: 25 de Julio de 2026 a las 18:30:00
-        const countDownDate = new Date("Jul 25, 2026 18:30:00").getTime();
+        const countDownDate = new Date("May 30 sabado, 2026 01:00:00 pm").getTime();
 
         const timerInterval = setInterval(function() {
             const now = new Date().getTime();
@@ -590,185 +770,5 @@
         // Ejecutar triggerReveal al hacer scroll
         window.addEventListener('scroll', triggerReveal);
     </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Nuestra Boda</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-body {
-    margin: 0;
-    background: #f4f1ea;
-    font-family: 'Playfair Display', serif;
-}
-
-.container {
-    max-width: 720px;
-    margin: 40px auto;
-    padding: 60px 40px;
-    background: #fff;
-    border: 6px solid #d4af37;
-    outline: 1px solid #e7d3a3;
-    outline-offset: -15px;
-    text-align: center;
-    position: relative;
-}
-
-/* DECORACIONES (más sutiles y elegantes) */
-.corner {
-    position: absolute;
-    width: 140px;
-    opacity: 0.85;
-}
-
-.tl { top: -30px; left: -30px; }
-.tr { top: -30px; right: -30px; transform: scaleX(-1); }
-.bl { bottom: -30px; left: -30px; transform: scaleY(-1); }
-.br { bottom: -30px; right: -30px; transform: scale(-1); }
-
-/* TEXTO */
-.quote {
-    font-size: 17px;
-    line-height: 1.5;
-    margin-bottom: 35px;
-}
-
-.names {
-    font-family: 'Great Vibes', cursive;
-    font-size: 78px;
-    margin: 0;
-}
-
-.and {
-    font-family: 'Great Vibes', cursive;
-    font-size: 42px;
-    margin: 5px 0;
-}
-
-.message {
-    font-size: 20px;
-    margin: 35px 0;
-}
-
-/* FECHA */
-.date-block {
-    margin: 30px 0;
-}
-
-.row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.line {
-    height: 1px;
-    width: 90px;
-    background: #d4af37;
-}
-
-.day, .time {
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.number {
-    font-size: 75px;
-    font-weight: 600;
-    margin: 5px 0;
-}
-
-.month {
-    font-size: 15px;
-    letter-spacing: 4px;
-}
-
-/* UBICACIÓN */
-.location {
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-.location em {
-    font-style: italic;
-}
-
-/* FOOTER */
-.footer {
-    margin-top: 45px;
-    font-family: 'Great Vibes', cursive;
-    font-size: 55px;
-}
-
-/* DETALLE EXTRA: efecto papel */
-.container::before {
-    content: "";
-    position: absolute;
-    inset: 10px;
-    border: 1px solid rgba(212,175,55,0.4);
-    pointer-events: none;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-    <!-- FLORES (puedes cambiar por PNGs exactos si quieres) -->
-    <img src="https://i.imgur.com/9yG3YzR.png" class="corner tl">
-    <img src="https://i.imgur.com/9yG3YzR.png" class="corner tr">
-    <img src="https://i.imgur.com/9yG3YzR.png" class="corner bl">
-    <img src="https://i.imgur.com/9yG3YzR.png" class="corner br">
-
-    <div class="quote">
-        “El que halla esposa halla el bien, y alcanza la benevolencia de Jehová.”<br>
-        — Proverbios 18:22
-    </div>
-
-    <h1 class="names">Jeshua</h1>
-    <div class="and">&</div>
-    <h1 class="names">Angelli</h1>
-
-    <div class="message">
-        Queremos que seas parte de uno de los días más importantes de nuestras vidas.
-    </div>
-
-    <div class="date-block">
-
-        <div class="row">
-            <div class="line"></div>
-            <div class="day">SÁBADO</div>
-            <div class="line"></div>
-        </div>
-
-        <div class="number">30</div>
-        <div class="month">MAYO</div>
-
-        <div class="row">
-            <div class="line"></div>
-            <div class="time">A LA 1:00 PM</div>
-            <div class="line"></div>
-        </div>
-
-    </div>
-
-    <div class="location">
-        San Pedro Tapanatepec, Oaxaca<br>
-        <em>Salón NaturaFrut</em>
-    </div>
-
-    <div class="footer">
-        Nuestra Boda
-    </div>
-
-</div>
-
 </body>
 </html>
