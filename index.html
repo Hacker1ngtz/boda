@@ -1,250 +1,243 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><!DOCTYPE html>
-<html lang="es">
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Tipografías elegantes -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
 <title>Boda Jeshua & Angelli</title>
 
 <style>
 body {
   margin: 0;
+  font-family: 'Playfair Display', serif;
   background: #f6f3ef;
-  font-family: serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  -webkit-tap-highlight-color: transparent;
+  color: #3d3d3d;
+  overflow-x: hidden;
 }
 
 /* SOBRE */
-.envelope {
-  position: relative;
-  width: 300px;
-  height: 200px;
-  background: linear-gradient(145deg, #d8c29d, #bfa46f);
-  border-radius: 10px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: 1s;
+.screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* TAPA */
+.envelope {
+  width: 280px;
+  height: 180px;
+  background: linear-gradient(145deg, #d8c29d, #bfa46f);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
 .envelope:before {
   content: "";
   position: absolute;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-top: 100px solid #b59455;
-  width: 0;
-  height: 0;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-top: 90px solid #b59455;
   top: 0;
   transform-origin: top;
   transition: 1s;
 }
 
-/* SELLO DE CERA */
 .seal {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle at 30% 30%, #b30000, #7a0000);
+  width: 70px;
+  height: 70px;
+  background: #7a0000;
   border-radius: 50%;
-  top: 60px;
+  top: 55px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 5;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 20px;
   font-weight: bold;
-  box-shadow: inset 0 3px 6px rgba(255,255,255,0.3),
-              0 6px 10px rgba(0,0,0,0.3);
-  transition: 0.5s;
 }
 
-/* brillo */
-.seal::after {
-  content: "";
-  position: absolute;
-  width: 60%;
-  height: 30%;
-  background: rgba(255,255,255,0.2);
-  top: 10px;
-  left: 10px;
-  border-radius: 50%;
-}
-
-/* CARTA */
-.letter {
-  position: absolute;
-  width: 90%;
-  height: 90%;
-  background: white;
-  top: 5%;
-  left: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 36px;
-  color: #a88c5a;
-  border-radius: 6px;
-  transition: 1s;
-}
-
-/* TEXTO */
-.click-text {
-  position: absolute;
-  bottom: -40px;
-  width: 100%;
-  text-align: center;
-  color: #7a6a4f;
-  font-size: 14px;
-}
-
-/* ANIMACIÓN */
 .open:before {
   transform: rotateX(180deg);
 }
 
-.open .letter {
-  transform: translateY(-120px);
-}
-
-.open .seal {
-  transform: translateX(-50%) scale(0);
-  opacity: 0;
-}
-
 /* INVITACIÓN */
 .invite {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100vh;
-  background: #f6f3ef;
   display: none;
-  opacity: 0;
-  transition: opacity 1s ease;
-  overflow: auto;
 }
 
-.bg-invite {
-  width: 100%;
-  display: block;
+/* SECCIONES */
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HERO */
+.hero h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+  color: #000;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+/* FRASE */
+.quote {
+  font-size: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* FECHA */
+.date {
+  font-size: 50px;
+  margin: 20px 0;
+  color: #a88c5a;
+}
+
+/* LUGAR */
+.place {
+  font-size: 20px;
+}
+
+/* BOTÓN */
+.btn {
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: #a88c5a;
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
 }
 
 /* CONTADOR */
 .countdown {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  text-align: center;
+  margin-top: 20px;
   font-size: 18px;
   color: #7a6a4f;
-  font-weight: bold;
 }
 
-/* BOTÓN */
-.overlay {
-  position: fixed;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-  z-index: 10;
-}
-
-.overlay::before {
-  content: "";
+/* FLORES DECORATIVAS */
+.flower-top {
   position: absolute;
-  bottom: -20px;
-  left: 0;
+  top: 0;
   width: 100%;
-  height: 120px;
-  background: linear-gradient(transparent, #f6f3ef);
-  z-index: -1;
+  opacity: 0.15;
 }
 
-.btn {
-  padding: 12px 24px;
-  border-radius: 30px;
-  text-decoration: none;
-  background: rgba(255,255,255,0.9);
-  color: #a88c5a;
-  border: 1px solid #c8a96a;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.08);
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .envelope {
-    width: 220px;
-    height: 150px;
-  }
-
-  .letter {
-    font-size: 28px;
-  }
-
-  .seal {
-    width: 60px;
-    height: 60px;
-    font-size: 16px;
-  }
+.flower-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.15;
 }
 </style>
 </head>
 
 <body>
 
-<div class="envelope" id="env">
-  <div class="seal">J&A</div>
-  <div class="letter"></div>
-  <div class="click-text">Presiona el sello para abrir</div>
+<!-- SOBRE -->
+<div class="screen" id="screen">
+  <div class="envelope" id="env">
+    <div class="seal">J&A</div>
+  </div>
 </div>
 
+<!-- INVITACIÓN -->
 <div class="invite" id="invite">
-  <img src="invitacion.jpeg" class="bg-invite">
 
-  <div class="countdown" id="countdown"></div>
-
-  <div class="overlay">
-    <a class="btn"
-       href="https://maps.google.com/?q=Salon+NaturaFrut+Oaxaca"
-       target="_blank">
-       Ver ubicación
-    </a>
+  <!-- FRASE -->
+  <div class="section">
+    <div class="quote">
+      “El que halla esposa halla el bien, y alcanza la benevolencia de Jehová.”<br>
+      — Proverbios 18:22
+    </div>
   </div>
+
+  <!-- NOMBRES -->
+  <div class="section hero">
+    <div>
+      <h1>Jeshua & Angelli</h1>
+      <p>Queremos que seas parte de uno de los días más importantes de nuestras vidas</p>
+    </div>
+  </div>
+
+  <!-- FECHA -->
+  <div class="section">
+    <div>
+      <div class="date">30 Mayo</div>
+      <p>Sábado · 1:00 PM</p>
+    </div>
+  </div>
+
+  <!-- LUGAR -->
+  <div class="section">
+    <div class="place">
+      San Pedro Tapanatepec, Oaxaca<br>
+      <b>Salón NaturaFrut</b>
+    </div>
+  </div>
+
+  <!-- BOTÓN -->
+  <div class="section">
+    <div>
+      <a class="btn"
+         href="https://maps.google.com/?q=Salon+NaturaFrut+Oaxaca"
+         target="_blank">
+         Ver ubicación
+      </a>
+
+      <div class="countdown" id="countdown"></div>
+    </div>
+  </div>
+
 </div>
 
 <script>
 const env = document.getElementById("env");
+const screen = document.getElementById("screen");
 const invite = document.getElementById("invite");
 
 env.addEventListener("click", () => {
   env.classList.add("open");
 
   setTimeout(() => {
-    env.style.display = "none";
+    screen.style.display = "none";
     invite.style.display = "block";
+    document.body.style.overflow = "auto";
+  }, 1000);
+});
 
-    setTimeout(() => {
-      invite.style.opacity = "1";
-      document.body.style.overflow = "auto";
-    }, 100);
+/* ANIMACIÓN SCROLL */
+const sections = document.querySelectorAll(".section");
 
-  }, 1200);
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
 });
 
 /* COUNTDOWN */
