@@ -74,13 +74,25 @@ body {
 }
 
 /* HERO */
-.hero {
-  height: 100vh;
-  background: url("invitacion.jpeg") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hero {  .anim-logo {
+  background: transparent;
+  width: 30rem;
+  height: 30rem;
   position: relative;
+  margin: 0 auto;
+  &:before {
+    content: "";
+    position: absolute;
+    background-image: url("https://canva.link/c796ghbnjet0plp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    -webkit-animation: rotation 15s infinite linear;
+ 
 }
   .anim-logo {
   background: transparent;
