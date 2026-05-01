@@ -7,141 +7,141 @@
 
 <style>
 body {
-    margin: 0;
-    background: #f6f3ef;
-    font-family: serif;
-    overflow: hidden;
-    -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  background: #f6f3ef;
+  font-family: serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* SOBRE */
-.screen {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .envelope {
-    width: 260px;
-    height: 160px;
-    background: linear-gradient(145deg, #d8c29d, #bfa46f);
-    position: relative;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    cursor: pointer;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(145deg, #d8c29d, #bfa46f);
+  cursor: pointer;
+  transition: 1s;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* SELLO */
-.stamp {
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    background: #a88c5a;
-    color: white;
-    border-radius: 50%;
-    top: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 5;
+/* TAPA */
+.envelope:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 100px solid #b59455;
+  top: 0;
+  transform-origin: top;
+  transition: 1s;
 }
 
-/* Tapa */
-.flap {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(145deg, #c8a96a, #a98c55);
-    clip-path: polygon(0 0, 50% 65%, 100% 0);
-    transform-origin: top;
-    transition: 0.8s;
-    z-index: 2;
-}
-
-/* Carta */
+/* CARTA */
 .letter {
-    position: absolute;
-    width: 90%;
-    height: 120%;
-    background: #fff;
-    top: 10%;
-    left: 5%;
-    border-radius: 6px;
-    transition: 0.8s;
-    z-index: 1;
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background: white;
+  top: 5%;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  color: #a88c5a;
+  transition: 1s;
+  border-radius: 6px;
 }
 
-.open .flap {
-    transform: rotateX(180deg);
+/* TEXTO CLICK */
+.click-text {
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  text-align: center;
+  color: #7a6a4f;
+  font-size: 14px;
+}
+
+/* ANIMACIÓN */
+.open:before {
+  transform: rotateX(180deg);
 }
 
 .open .letter {
-    transform: translateY(-90px);
-}
-
-/* INICIALES */
-.initials {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-size: 60px;
-    color: #a88c5a;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    letter-spacing: 10px;
-    transition: opacity 1s ease;
+  transform: translateY(-120px);
 }
 
 /* INVITACIÓN */
 .invite {
-    display: none;
-    position: relative;
-    min-height: 100vh;
-    overflow: auto;
-    opacity: 0;
-    transition: opacity 1s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f6f3ef;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
-.bg-invite {
-    width: 100%;
-    height: auto;
+.invite img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* CONTADOR */
 .countdown {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    text-align: center;
-    color: #7a6a4f;
-    font-size: 18px;
-    font-weight: bold;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: #7a6a4f;
+  font-weight: bold;
 }
 
 /* BOTÓN */
 .overlay {
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 .btn {
-    padding: 12px 24px;
-    border-radius: 30px;
-    text-decoration: none;
-    background: rgba(255,255,255,0.9);
-    color: #a88c5a;
-    border: 1px solid #c8a96a;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  background: rgba(255,255,255,0.9);
+  color: #a88c5a;
+  border: 1px solid #c8a96a;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .envelope {
+    width: 220px;
+    height: 150px;
+  }
+
+  .letter {
+    font-size: 28px;
+  }
 }
 </style>
 </head>
@@ -149,73 +149,63 @@ body {
 <body>
 
 <!-- SOBRE -->
-<div class="screen" id="screen">
-    <div class="envelope" id="env">
-        <div class="stamp">Click aquí<br>para abrir</div>
-        <div class="flap"></div>
-        <div class="letter"></div>
-    </div>
-
-    <div class="initials" id="initials">J & A</div>
+<div class="envelope" id="env">
+  <div class="letter">J & A</div>
+  <div class="click-text">Click aquí para abrir</div>
 </div>
 
 <!-- INVITACIÓN -->
 <div class="invite" id="invite">
-    <img src="invitacion.jpg" class="bg-invite">
-    <div class="countdown" id="countdown"></div>
+  <img src="invitacion.jpeg" alt="Invitación de boda">
 
-    <div class="overlay">
-        <a class="btn"
-           href="https://maps.google.com/?q=Salon+NaturaFrut+Oaxaca"
-           target="_blank">
-           Ver ubicación
-        </a>
-    </div>
+  <div class="countdown" id="countdown"></div>
+
+  <div class="overlay">
+    <a class="btn"
+       href="https://maps.google.com/?q=Salon+NaturaFrut+Oaxaca"
+       target="_blank">
+       Ver ubicación
+    </a>
+  </div>
 </div>
 
 <script>
 const env = document.getElementById("env");
-const screen = document.getElementById("screen");
 const invite = document.getElementById("invite");
-const initials = document.getElementById("initials");
 
 env.addEventListener("click", () => {
-    env.classList.add("open");
+  env.classList.add("open");
+
+  setTimeout(() => {
+    env.style.display = "none";
+    invite.style.display = "block";
 
     setTimeout(() => {
-        initials.style.opacity = "1";
-    }, 600);
+      invite.style.opacity = "1";
+      document.body.style.overflow = "auto";
+    }, 100);
 
-    setTimeout(() => {
-        initials.style.opacity = "0";
-    }, 1800);
-
-    setTimeout(() => {
-        screen.style.display = "none";
-        invite.style.display = "block";
-        invite.style.opacity = "1";
-        document.body.style.overflow = "auto";
-    }, 2300);
+  }, 1000);
 });
 
 /* COUNTDOWN */
-const eventDate = new Date("May 30, 2026 13:00:00").getTime();
+const eventDate = new Date("2024-05-30T13:00:00").getTime();
 
 setInterval(() => {
-    const now = new Date().getTime();
-    const d = eventDate - now;
+  const now = new Date().getTime();
+  const d = eventDate - now;
 
-    if (d <= 0) {
-        document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
-        return;
-    }
+  if (d <= 0) {
+    document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
+    return;
+  }
 
-    const days = Math.floor(d / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((d / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((d / (1000 * 60)) % 60);
+  const days = Math.floor(d / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((d / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((d / (1000 * 60)) % 60);
 
-    document.getElementById("countdown").innerHTML =
-        `${days} días · ${hours} hrs · ${minutes} min`;
+  document.getElementById("countdown").innerHTML =
+    `${days} días · ${hours} hrs · ${minutes} min`;
 
 }, 1000);
 </script>
