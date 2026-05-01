@@ -2,328 +2,179 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestra Boda</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
-
-<title>Boda Jeshua & Angelli</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
-  margin: 0;
-  font-family: 'Playfair Display', serif;
-  background: #f6f3ef;
-  overflow-x: hidden;
-  -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    background: #f4f1ea;
+    font-family: 'Playfair Display', serif;
 }
 
-/* SOBRE */
-.screen {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 60px 40px;
+    background: #fff;
+    border: 6px solid #d4af37;
+    outline: 1px solid #e7d3a3;
+    outline-offset: -15px;
+    text-align: center;
+    position: relative;
 }
 
-.envelope {
-  width: 280px;
-  height: 180px;
-  background: linear-gradient(145deg, #d8c29d, #bfa46f);
-  border-radius: 10px;
-  position: relative;
-  cursor: pointer;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+/* DECORACIONES (más sutiles y elegantes) */
+.corner {
+    position: absolute;
+    width: 140px;
+    opacity: 0.85;
 }
 
-.envelope:before {
-  content: "";
-  position: absolute;
-  border-left: 140px solid transparent;
-  border-right: 140px solid transparent;
-  border-top: 90px solid #b59455;
-  top: 0;
-  transform-origin: top;
-  transition: 1s;
+.tl { top: -30px; left: -30px; }
+.tr { top: -30px; right: -30px; transform: scaleX(-1); }
+.bl { bottom: -30px; left: -30px; transform: scaleY(-1); }
+.br { bottom: -30px; right: -30px; transform: scale(-1); }
+
+/* TEXTO */
+.quote {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 35px;
 }
 
-.seal {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background: radial-gradient(circle, #8b0000, #5a0000);
-  border-radius: 50%;
-  top: 55px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 78px;
+    margin: 0;
 }
 
-.open:before {
-  transform: rotateX(180deg);
+.and {
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+    margin: 5px 0;
 }
 
-/* INVITACIÓN */
-.invite {
-  display: none;
-  opacity: 0;
-  transition: opacity 1.5s ease;
+.message {
+    font-size: 20px;
+    margin: 35px 0;
 }
 
-/* HERO */
-.hero {  .anim-logo {
-  background: transparent;
-  width: 30rem;
-  height: 30rem;
-  position: relative;
-  margin: 0 auto;
-  &:before {
+/* FECHA */
+.date-block {
+    margin: 30px 0;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.line {
+    height: 1px;
+    width: 90px;
+    background: #d4af37;
+}
+
+.day, .time {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.number {
+    font-size: 75px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.month {
+    font-size: 15px;
+    letter-spacing: 4px;
+}
+
+/* UBICACIÓN */
+.location {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.location em {
+    font-style: italic;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 45px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+}
+
+/* DETALLE EXTRA: efecto papel */
+.container::before {
     content: "";
     position: absolute;
-    background-image: url("https://canva.link/c796ghbnjet0plp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    top: 0;
-    left: 0;
-    height: inherit;
-    width: inherit;
-    -webkit-animation: rotation 15s infinite linear;
- 
-}
-  .anim-logo {
-  background: transparent;
-  width: 30rem;
-  height: 30rem;
-  position: relative;
-  margin: 0 auto;
-  &:before {
-    content: "";
-    position: absolute;
-    background-image: url("https://canva.link/c796ghbnjet0plp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    top: 0;
-    left: 0;
-    height: inherit;
-    width: inherit;
-    -webkit-animation: rotation 15s infinite linear;
-  }
-  @-webkit-keyframes rotation {
-    from {
-      -webkit-transform: rotate(0deg);
-    }
-    to {
-      -webkit-transform: rotate(359deg);
-    }
-  }
-  .names {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url('https://78.media.tumblr.com/007651da7e077c262bd216d0807095ad/tumblr_p6ajmf09LB1w3i8y8o1_500.png');
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: translatex(-10px);
-  }
-}
-
-
-/* CAPA SUAVE */
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    rgba(246,243,239,0.2),
-    rgba(246,243,239,0.6)
-  );
-}
-
-/* CONTENIDO */
-.hero-content {
-  position: relative;
-  text-align: center;
-  z-index: 2;
-  animation: fadeLuxury 2s ease;
-}
-
-.hero h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 70px;
-  margin: 0;
-}
-
-.hero p {
-  font-size: 18px;
-}
-
-/* BOTÓN */
-.btn {
-  margin-top: 20px;
-  padding: 14px 30px;
-  border-radius: 30px;
-  background: linear-gradient(145deg, #c8a96a, #a88c5a);
-  color: white;
-  text-decoration: none;
-  display: inline-block;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* CONTADOR */
-.countdown {
-  margin-top: 20px;
-  font-size: 18px;
-}
-
-/* ANIMACIÓN ENTRADA */
-@keyframes fadeLuxury {
-  0% { opacity: 0; transform: translateY(60px) scale(0.95); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-/* 🌸 PÉTALOS REALISTAS */
-.petal {
-  position: fixed;
-  top: -20px;
-  width: 12px;
-  height: 18px;
-  background: radial-gradient(circle at 30% 30%, #ffc0cb, #ff8fa3);
-  border-radius: 60% 40% 60% 40%;
-  opacity: 0.8;
-  animation: fall linear infinite;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  100% {
-    transform: translateY(110vh) rotate(720deg) translateX(50px);
-  }
-}
-
-/* ✨ BRILLO ELEGANTE */
-.sparkle {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: gold;
-  border-radius: 50%;
-  opacity: 0.6;
-  animation: sparkleAnim 3s infinite;
-}
-
-@keyframes sparkleAnim {
-  0%,100% { opacity: 0; transform: scale(0); }
-  50% { opacity: 1; transform: scale(1.5); }
+    inset: 10px;
+    border: 1px solid rgba(212,175,55,0.4);
+    pointer-events: none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="screen" id="screen">
-  <div class="envelope" id="env">
-    <div class="seal">J&A</div>
-  </div>
-</div>
+<div class="container">
 
-<div class="invite" id="invite">
+    <!-- FLORES (puedes cambiar por PNGs exactos si quieres) -->
+    <img src="https://i.imgur.com/9yG3YzR.png" class="corner tl">
+    <img src="https://i.imgur.com/9yG3YzR.png" class="corner tr">
+    <img src="https://i.imgur.com/9yG3YzR.png" class="corner bl">
+    <img src="https://i.imgur.com/9yG3YzR.png" class="corner br">
 
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Jeshua & Angelli</h1>
-      <p>30 de mayo · 1:00 PM</p>
-
-      <a class="btn"
-         href="https://maps.google.com/?q=Salon+NaturaFrut+Oaxaca"
-         target="_blank">
-         Ver ubicación
-      </a>
-
-      <div class="countdown" id="countdown"></div>
+    <div class="quote">
+        “El que halla esposa halla el bien, y alcanza la benevolencia de Jehová.”<br>
+        — Proverbios 18:22
     </div>
-  </div>
+
+    <h1 class="names">Jeshua</h1>
+    <div class="and">&</div>
+    <h1 class="names">Angelli</h1>
+
+    <div class="message">
+        Queremos que seas parte de uno de los días más importantes de nuestras vidas.
+    </div>
+
+    <div class="date-block">
+
+        <div class="row">
+            <div class="line"></div>
+            <div class="day">SÁBADO</div>
+            <div class="line"></div>
+        </div>
+
+        <div class="number">30</div>
+        <div class="month">MAYO</div>
+
+        <div class="row">
+            <div class="line"></div>
+            <div class="time">A LA 1:00 PM</div>
+            <div class="line"></div>
+        </div>
+
+    </div>
+
+    <div class="location">
+        San Pedro Tapanatepec, Oaxaca<br>
+        <em>Salón NaturaFrut</em>
+    </div>
+
+    <div class="footer">
+        Nuestra Boda
+    </div>
 
 </div>
-
-<script>
-const env = document.getElementById("env");
-const screen = document.getElementById("screen");
-const invite = document.getElementById("invite");
-
-env.addEventListener("click", () => {
-  env.classList.add("open");
-
-  setTimeout(() => {
-    screen.style.display = "none";
-    invite.style.display = "block";
-
-    setTimeout(() => {
-      invite.style.opacity = "1";
-      document.body.style.overflow = "auto";
-    }, 50);
-
-    createPetals();
-    createSparkles();
-
-  }, 1000);
-});
-
-/* COUNTDOWN */
-const eventDate = new Date("2024-05-30T13:00:00").getTime();
-
-setInterval(() => {
-  const now = new Date().getTime();
-  const d = eventDate - now;
-
-  if (d <= 0) {
-    document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
-    return;
-  }
-
-  const days = Math.floor(d / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((d / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((d / (1000 * 60)) % 60);
-
-  document.getElementById("countdown").innerHTML =
-    `${days} días · ${hours} hrs · ${minutes} min`;
-
-}, 1000);
-
-/* 🌸 PÉTALOS */
-function createPetals() {
-  for (let i = 0; i < 12; i++) {
-    let petal = document.createElement("div");
-    petal.classList.add("petal");
-    petal.style.left = Math.random() * 100 + "vw";
-    petal.style.animationDuration = (6 + Math.random() * 4) + "s";
-    document.body.appendChild(petal);
-  }
-}
-
-/* ✨ BRILLOS */
-function createSparkles() {
-  for (let i = 0; i < 10; i++) {
-    let s = document.createElement("div");
-    s.classList.add("sparkle");
-
-    s.style.top = (40 + Math.random() * 20) + "vh";
-    s.style.left = (30 + Math.random() * 40) + "vw";
-
-    document.body.appendChild(s);
-  }
-}
-</script>
 
 </body>
 </html>
