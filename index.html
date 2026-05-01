@@ -89,7 +89,10 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(246,243,239,0.2), rgba(246,243,239,0.6));
+  background: linear-gradient(
+    rgba(246,243,239,0.2),
+    rgba(246,243,239,0.6)
+  );
 }
 
 /* CONTENIDO */
@@ -134,33 +137,36 @@ body {
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* 🌸 PÉTALOS */
+/* 🌸 PÉTALOS REALISTAS */
 .petal {
   position: fixed;
-  top: -10px;
-  width: 15px;
-  height: 15px;
-  background: pink;
-  border-radius: 50% 50% 50% 0;
-  opacity: 0.7;
+  top: -20px;
+  width: 12px;
+  height: 18px;
+  background: radial-gradient(circle at 30% 30%, #ffc0cb, #ff8fa3);
+  border-radius: 60% 40% 60% 40%;
+  opacity: 0.8;
   animation: fall linear infinite;
 }
 
 @keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg) translateX(50px);
   }
 }
 
-/* ✨ BRILLO */
+/* ✨ BRILLO ELEGANTE */
 .sparkle {
-  position: fixed;
-  width: 4px;
-  height: 4px;
+  position: absolute;
+  width: 3px;
+  height: 3px;
   background: gold;
   border-radius: 50%;
-  opacity: 0.8;
-  animation: sparkleAnim 2s infinite;
+  opacity: 0.6;
+  animation: sparkleAnim 3s infinite;
 }
 
 @keyframes sparkleAnim {
@@ -208,8 +214,11 @@ env.addEventListener("click", () => {
   setTimeout(() => {
     screen.style.display = "none";
     invite.style.display = "block";
-    setTimeout(() => invite.style.opacity = "1", 50);
-    document.body.style.overflow = "auto";
+
+    setTimeout(() => {
+      invite.style.opacity = "1";
+      document.body.style.overflow = "auto";
+    }, 50);
 
     createPetals();
     createSparkles();
@@ -238,24 +247,26 @@ setInterval(() => {
 
 }, 1000);
 
-/* 🌸 CREAR PÉTALOS */
+/* 🌸 PÉTALOS */
 function createPetals() {
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 12; i++) {
     let petal = document.createElement("div");
     petal.classList.add("petal");
     petal.style.left = Math.random() * 100 + "vw";
-    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+    petal.style.animationDuration = (6 + Math.random() * 4) + "s";
     document.body.appendChild(petal);
   }
 }
 
 /* ✨ BRILLOS */
 function createSparkles() {
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 10; i++) {
     let s = document.createElement("div");
     s.classList.add("sparkle");
-    s.style.top = Math.random() * 100 + "vh";
-    s.style.left = Math.random() * 100 + "vw";
+
+    s.style.top = (40 + Math.random() * 20) + "vh";
+    s.style.left = (30 + Math.random() * 40) + "vw";
+
     document.body.appendChild(s);
   }
 }
